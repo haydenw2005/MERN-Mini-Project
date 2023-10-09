@@ -27,10 +27,11 @@ function App() {
   const [company, setCompany] = useState("");
   const [pageNum, setPage] = useState(1);
   const [responseData, setResponseData] = useState(null);
+  const [message, setMessage] = useState("");
   const maxPageFetch = 50000;
 
   useEffect(() => {
-    fetch("http://localhost:4000")
+    fetch("http://localhost:3000")
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
     callSearch(1);

@@ -7,15 +7,17 @@ const path = require("path");
 
 require("dotenv").config();
 
+
 const app = express();
 const port = process.env.PORT || 5000;
 
 const corsOptions = {
-  origin: "http://localhost:3000", // frontend URI (ReactJS)
+  origin: "http://localhost:3000" 
 }
 
 app.use(cors(corsOptions));
 app.use(express.json());
+
 
 app.post("/search", async (req, res) => {
   const url = "https://api.apollo.io/v1/mixed_people/search";
@@ -26,7 +28,7 @@ app.post("/search", async (req, res) => {
   };
 
   try {
-    req.body["api_key"] = process.env.API_KEY;
+    req.body['api_key'] = process.env.API_KEY;
     const response = await fetch(url, {
       method: "POST",
       headers: headers,
