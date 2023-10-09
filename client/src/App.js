@@ -30,7 +30,7 @@ function App() {
   const maxPageFetch = 50000;
 
   useEffect(() => {
-    fetch("http://localhost:5000")
+    fetch("https://mern-person-finder.onrender.com")
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
     callSearch(1);
