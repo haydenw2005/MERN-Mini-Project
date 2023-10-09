@@ -30,9 +30,6 @@ function App() {
   const maxPageFetch = 50000;
 
   useEffect(() => {
-    fetch("https://mern-person-finder.onrender.com")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
     callSearch(1);
   }, []);
 
@@ -45,7 +42,7 @@ function App() {
     };
 
     axios
-      .post("http://localhost:5000/search", data)
+      .post("https://mern-person-finder.onrender.com/search", data)
       .then((res) => setResponseData(res.data));
     console.log(responseData);
   };
