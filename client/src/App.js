@@ -39,12 +39,11 @@ function App() {
     setResponseData(null);
 
     const data = {
-      page: page,
+      'q_organization_domains': company,
+      'page': page,
+      'person_titles': [position],
     };
-
-    if (company) { data['q_organization_domains'] = company; }
-    if (position) { data['person_titles'] = [position]; }
-
+    
     axios
       .post("https://mern-person-finder.onrender.com/search", data)
       .then((res) => setResponseData(res.data));
