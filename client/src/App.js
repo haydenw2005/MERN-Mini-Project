@@ -25,6 +25,7 @@ function App() {
 
   const [position, setPosition] = useState("");
   const [company, setCompany] = useState("");
+  const [pageNum, setPageNum] = useState("");
   const [responseData, setResponseData] = useState(null);
   const [message, setMessage] = useState("");
   const maxPageFetch = 50000;
@@ -34,6 +35,7 @@ function App() {
   }, []);
 
   const callSearch = async (page) => {
+    setPageNum(page);
     setResponseData(null);
     const data = {
       q_organization_domains: company,
@@ -149,6 +151,7 @@ function App() {
           </div>
           {responseData ? (
             <Pagination
+              current={pageNum}
               onChange={(current) => callSearch(current)}
               total={
                 responseData["pagination"]["total_pages"] > maxPageFetch
