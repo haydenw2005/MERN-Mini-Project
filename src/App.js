@@ -26,9 +26,13 @@ function App() {
   const [position, setPosition] = useState("");
   const [company, setCompany] = useState("");
   const [responseData, setResponseData] = useState(null);
+  const [message, setMessage] = useState("");
   const maxPageFetch = 50000;
 
   useEffect(() => {
+    fetch("https://mern-person-finder.onrender.com")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
     callSearch(1);
   }, []);
 
