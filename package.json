@@ -18,6 +18,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ant": "^0.2.0",
+    "antd": "^5.9.4",
+    "axios": "^1.5.1",
     "dotenv": "^16.3.1"
   }
 }
