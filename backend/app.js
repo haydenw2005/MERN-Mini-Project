@@ -1,11 +1,12 @@
 //https://www.youtube.com/watch?v=7CqJlxBYj-M&ab_channel=freeCodeCamp.org
 //Credits to freeCodeCamp.org for MERN tutorial
-const express = require("express");
-const cors = require("cors");
-const fetch = require("node-fetch");
-const path = require("path");
+import express, { json } from "express";
+import cors from "cors";
+import fetch from "node-fetch";
+import path from "path";
+import dotenv from "dotenv";
 
-require("dotenv").config();
+dotenv.config();
 
 
 const app = express();
@@ -16,7 +17,7 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions));
-app.use(express.json());
+app.use(json());
 
 
 app.post("/search", async (req, res) => {
