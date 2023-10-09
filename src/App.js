@@ -30,6 +30,9 @@ function App() {
   const maxPageFetch = 50000;
 
   useEffect(() => {
+    fetch("http://localhost:4000")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
     callSearch(1);
   }, []);
 
