@@ -3,9 +3,6 @@ import { Avatar, List, Spin } from "antd";
 import Search from "antd/es/input/Search";
 
 //credits to https://ant.design/components/list for styling
-
-const checkImage = (url) => {};
-
 function SearchList(props) {
   return (
     <div>

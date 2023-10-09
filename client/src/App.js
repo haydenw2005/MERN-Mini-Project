@@ -12,7 +12,7 @@ import React, { useEffect, useState } from "react";
 import { Breadcrumb, Layout, theme, Spin } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import axios from "axios";
-import SearchList from "/Users/haydenwhite/development/OneShot/Project1/mern-exercise/src/components/SearchList.component.js";
+import SearchList from "./components/SearchList.component.js";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { Title } = Typography;
@@ -30,7 +30,7 @@ function App() {
   const maxPageFetch = 50000;
 
   useEffect(() => {
-    fetch("https://mern-person-finder.onrender.com")
+    fetch("http://localhost:5000")
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
     callSearch(1);
